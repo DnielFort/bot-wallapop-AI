@@ -1,0 +1,16 @@
+{
+    "cron.jobs": {
+        "jobs": [
+            {
+                "name": "My Script using specific date",
+                "description": "Runs a script at a specific time.",
+                
+                "time": "*/30 * * * * *",
+                "action": {
+                    "type": "script",
+                    "script": "/Users/macbookpro/Desktop/scraper/main.py"
+                }
+            }
+        ]
+    }
+}
