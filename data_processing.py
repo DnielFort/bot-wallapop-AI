@@ -1,7 +1,7 @@
 from selenium import webdriver
 from products import *
 from selenium.common.exceptions import NoSuchElementException
-
+ 
 
 # Devuelve una lista con los productos que se han encontrado en la página
 def process_data(data, lista_enlaces, lista_nuevos_productos):

@@ -27,12 +27,13 @@ def enable_stealth():
 #Datos para enviar mensajes por telegram
 token = '7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU'
 chat_id = '407676263'
+service = webdriver.ChromeService(executable_path='/home/daniel/Documents/chromedriver')
 
 # Abre el link, rechaza las cookies y deja todo listo para scraping
 # Devuelve el driver para poder seguir trabajando con él
 def open_link(link):
     enable_stealth()
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options, service=service)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     driver.maximize_window()
     driver.get(link)
