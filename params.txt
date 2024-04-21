@@ -1,0 +1,14 @@
+csv_path = /Users/macbookpro/Downloads/bot-wallapop-AI-main/productos.csv
+executable_path= /Users/macbookpro/Documents/chromedriver
+token = 7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU
+chat_id = 407676263
+
+
+
+
+
+Parte raspberry:
+csv_path = '/home/daniel/Downloads/bot-wallapop-AI-main/productos.csv'
+executable_path='/home/daniel/Documents/chromedriver'
+token = '7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU'
+chat_id = '407676263'
