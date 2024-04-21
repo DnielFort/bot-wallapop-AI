@@ -1,3 +1,13 @@
+csv_path = 
+executable_path= 
+token = 
+chat_id = 
+
+
+
+
+
+Parte MAC Daniel
 csv_path = /Users/macbookpro/Downloads/bot-wallapop-AI-main/productos.csv
 executable_path= /Users/macbookpro/Documents/chromedriver
 token = 7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU
