@@ -17,12 +17,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import ElementClickInterceptedException
 
 
-
-
-
-
-
-
 options = webdriver.ChromeOptions()
 def enable_stealth():
     options.add_argument("--no-sandbox")
@@ -37,9 +31,7 @@ def enable_stealth():
 
 
 
-#Datos para enviar mensajes por telegram
-token = '7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU'
-chat_id = '155938383'
+
 
 
 # Abre el link, rechaza las cookies y deja todo listo para scraping

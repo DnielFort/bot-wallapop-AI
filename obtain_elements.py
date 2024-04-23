@@ -4,19 +4,27 @@ from selenium.webdriver import ActionChains
 from products import *
 import time
 import pandas as pd
+from selenium.common.exceptions import NoSuchElementException
 
 # Encuentra el HTML en el que se encuentran los elementos que queremos obtener
 # El HTML está sin refinar, es necesario pasarlo por data_processing.py
 def obtain_elements(driver):
     # Encuentra todos los elementos 'p' en la página
     TAG_NAME = "xpath"
-    elements_div = driver.find_element(TAG_NAME, "/html/body/tsl-root/tsl-public/div/div/tsl-search/div/tsl-search-layout/div/div[2]/div/tsl-public-item-card-list")
+    #Intenta buscar productos, en caso de no encontrar ninguno (Exception: NoSuchElement) devuelve una lista vacia
+    try:
+        elements_div = driver.find_element(TAG_NAME, "/html/body/tsl-root/tsl-public/div/div/tsl-search/div/tsl-search-layout/div/div[2]/div/tsl-public-item-card-list")
+        
+        a_elements = elements_div.find_elements("class name", 'ItemCardList__item')
 
-    a_elements = elements_div.find_elements("class name", 'ItemCardList__item')
-
-    # Imprime el código HTML de cada elemento 'a'
-    for a_element in a_elements:
-        print(a_element.get_attribute('outerHTML'))
-        print("\n---------------------------------------------------\n")
-    return a_elements
+        # Imprime el código HTML de cada elemento 'a'
+        for a_element in a_elements:
+            print(a_element.get_attribute('outerHTML'))
+            print("\n---------------------------------------------------\n")
+        return a_elements
+    
+    except NoSuchElementException:
+        print("No se han encontrado elementos")
+        return []
+    
 

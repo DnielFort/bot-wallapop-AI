@@ -1,3 +1,5 @@
+NO SE USA, SOLO GUARDADO TEMPORALMENTE PARA PASAR IDENTIFICADORES AL .ENV
+
 csv_path = E:\\wallapopAI\\bot-wallapop-AI\\productos.csv
 executable_path= 
 token = 7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU
