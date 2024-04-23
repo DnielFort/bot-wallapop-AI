@@ -1,7 +1,7 @@
-csv_path = 
+csv_path = E:\\wallapopAI\\bot-wallapop-AI\\productos.csv
 executable_path= 
-token = 
-chat_id = 
+token = 7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU
+chat_id = 155938383
 
 
 

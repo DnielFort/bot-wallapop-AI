@@ -39,7 +39,7 @@ def enable_stealth():
 
 #Datos para enviar mensajes por telegram
 token = '7036583138:AAFdsovf1zwXA3rP2IITx_2Uc_5kJzTjxgU'
-chat_id = '407676263'
+chat_id = '155938383'
 
 
 # Abre el link, rechaza las cookies y deja todo listo para scraping
