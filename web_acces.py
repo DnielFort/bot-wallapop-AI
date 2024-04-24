@@ -68,6 +68,7 @@ def open_link(link, executable_path2):
             driver.find_element("tag name", 'body').click()
         time.sleep(1)  # Sleep importante por la animación
 
+    time.sleep(1)
 
     
     # SCROLL y BUSCAR TODOS LOS PRODUCTOS

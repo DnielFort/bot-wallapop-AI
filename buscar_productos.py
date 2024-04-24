@@ -32,8 +32,10 @@ def obtener_nombre_producto(link):
 
     return nombre_producto
 
-def buscar_productos(link):
-    
+def buscar_productos(link, ruta_usuario, chat_id):
+    # Se avisa al usuario de que se ha encontrado un nuevo producto
+    avisar = True
+
     # Carga el archivo .env (temporalmente esta en la funcion, pero debería estar fuera de la funcion y/o en el main)
     """¡¡¡IMPORTANTE, EN EL .ENV HAY QUE DESCOMENTAR LAS 
     #VARIABLES DE ENTORNO QUE SE VAYAN A UTILIZAR (Y COMENTAR LAS QUE NO SE USEN)!!!"""
@@ -43,8 +45,8 @@ def buscar_productos(link):
 
 
     #Obtener los datos del archivo .env
-    csv_path = os.getenv("CSV_PATH")
-    executable_path2 = os.getenv("EXECUTABLE_PATH2")
+    csv_path = ruta_usuario + "/"
+    executable_path2 = os.getenv("EXECUTABLE_PATH")
     token = os.getenv("TOKEN")
     chat_id = os.getenv("CHAT_ID")
     limite_productos = os.getenv("LIMITE_PRODUCTOS") #AUN NO IMPLEMENTADO
@@ -55,17 +57,24 @@ def buscar_productos(link):
     #Le da nombre al fichero CSV
     fichero_csv = f"{csv_path+nombre_producto}.csv"
     
+
+
     #Enviar mensaje de inicio
+    "-----PROVISIONAL------"
     enviar_mensaje_telegram(token, chat_id, 'empezamoooOoOoOOoos')
+
+
+
     #Array que contendrá los nuevos productos que se han encontrado
     lista_nuevos_productos = []
 
     #Comprobar si el archivo CSV está vacío y/o existe
-
     if not os.path.exists(fichero_csv) or os.stat(fichero_csv).st_size == 0:
         #Si el archivo no existe o está vacío, se crea y se añade la cabecera
         with open(fichero_csv, 'w', newline='') as producto_csv:
-            
+            # Si se busca por primera vez no se notifica al usuario de los nuevos productos
+            avisar = False
+
             print("El archivo CSV está vacío")        
             start_csv = pd.DataFrame(columns=["nombre", "precio", "enlace"])
             start_csv.to_csv(producto_csv, index=False)
@@ -77,9 +86,6 @@ def buscar_productos(link):
     #Leer el csv y crear una lista con todos los links para procesarlos más adelante.
     lista_enlaces = df['enlace'].tolist()
 
-    #linea repetida, quitada 
-    #lista_enlaces = df['descripcion'].tolist()
-    
     # Abre el link, rechaza las cookies y deja todo listo para scraping
     driver = open_link(link, executable_path2)
 
@@ -98,11 +104,13 @@ def buscar_productos(link):
     
     if len(lista_productos) > 0:
         print(len(lista_productos))
-    # Convertir la lista de diccionarios en un DataFrame
+        # Convertir la lista de diccionarios en un DataFrame
         df = pd.DataFrame(data)
 
         # Escribir los datos en un archivo CSV
         df.to_csv(fichero_csv, index=False)
+
+    driver.quit()
 
     #Si no se han encontrado productos, envia aviso y borra el CSV creado anteriormente
     if len(lista_nuevos_productos) == 0 and len(df) == 0:
@@ -124,7 +132,8 @@ def buscar_productos(link):
             print(producto.link)
             print("\n---------------------------------------------------\n")
             mensaje = f"Nuevo producto encontrado: {producto.titulo} por {producto.precio} en {producto.link}"
-            enviar_mensaje_telegram(token, chat_id, mensaje)
+            if avisar:
+                enviar_mensaje_telegram(token, chat_id, mensaje)
     
     print("FIN DE LA BÚSQUEDA")
-    driver.quit()
+

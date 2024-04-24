@@ -26,9 +26,6 @@ def process_data(data, lista_enlaces, lista_nuevos_productos):
         
         enlace = element.get_attribute("href")
         product.set_link(enlace)
-        print(product.get_name())
-        print(product.get_price())
-        print(product.get_link())
         print("\n---------------------------------------------------\n")
 
         if product.get_link() in lista_enlaces:

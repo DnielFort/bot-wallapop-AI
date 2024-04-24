@@ -1,0 +1,2 @@
+https://es.wallapop.com/app/search?filters_source=quick_filters&keywords=kindle&latitude=41.387917&longitude=2.1699187&shipping=true&distance=100000&min_sale_price=36&max_sale_price=200
+https://es.wallapop.com/app/search?engine=gasoil&max_year=2016&min_km=8000&max_km=250000&min_sale_price=3000&max_sale_price=9000&category_ids=100&keywords=xc90&latitude=41.387917&longitude=2.1699187&distance=100000&filters_source=default_filters
