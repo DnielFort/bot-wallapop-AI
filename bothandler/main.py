@@ -14,7 +14,7 @@ print("\n",dotenv_path,"\n")
 load_dotenv()
 # Ahora puedes acceder a las variables de entorno con os.getenv
 TOKEN = os.getenv('TOKEN')
-PASSWORD = "ronnie"
+PASSWORD = ""
 print("la contra es: ",PASSWORD)
 
 
