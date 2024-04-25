@@ -1,3 +1,0 @@
-https://es.wallapop.com/app/search?filters_source=search_box&keywords=thinkpad%20carbon&longitude=-3.69196&latitude=40.41956
-https://es.wallapop.com/app/search?engine=gasoil&min_year=1990&max_year=2019&min_km=40000&max_km=250000&min_sale_price=2000&max_sale_price=8000&category_ids=100&keywords=xc90&latitude=41.56091&longitude=2.00861&filters_source=quick_filters
-https://es.wallapop.com/app/search?filters_source=quick_filters&keywords=kindle&latitude=41.387917&longitude=2.1699187&shipping=true&min_sale_price=15&max_sale_price=120
