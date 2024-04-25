@@ -16,7 +16,7 @@ from avisos import *
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import ElementClickInterceptedException
 
-
+# Opciones que bypasan los sistemas de seguridad anti-bot
 options = webdriver.ChromeOptions()
 def enable_stealth():
     options.add_argument("--no-sandbox")
@@ -59,16 +59,17 @@ def open_link(link, executable_path2):
     # Sleep importante, el botón tiene animación y tarda en aparecer
     time.sleep(1)
 
-    # Haz tres clics en el botón de saltar
+    # Hace tres clics en el botón de saltar
     button = p_elements = driver.find_element("xpath", '/html/body/tsl-root/tsl-public/div/div/tsl-search/div/div')
-    for _ in range(3):
+    for _ in range(5):
         try:
             button.click()
         except ElementClickInterceptedException:
             driver.find_element("tag name", 'body').click()
         time.sleep(1)  # Sleep importante por la animación
 
-    time.sleep(1)
+
+    
 
     
     # SCROLL y BUSCAR TODOS LOS PRODUCTOS
@@ -91,7 +92,8 @@ def open_link(link, executable_path2):
             elemento_bottom = driver.find_element("xpath", "/html/body/tsl-root/tsl-public/div/tsl-footer/footer/div[1]/div/div[2]/div/div[1]/ul/li[2]/a")
             mas_productos = False
         except NoSuchElementException:
-            driver.execute_script("window.scrollTo(0, 20000000000);")        
+            driver.execute_script("window.scrollTo(0, 20000000000);")
+                    
 
     return driver
 
