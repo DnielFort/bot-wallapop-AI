@@ -25,4 +25,5 @@ MODIFICACIONES API PARA FUNCIONAR JUNTO AL BOT
 - [x] Modificar bucle principal para que ejecute buscar_productos() de todos los links de todos los usuarios.
 - [x] Editar sistema de generado de csv con tal de que cree los archivos en la carpeta de cada usuario.
 - [x] Establecer que la primera vez que se añaden los productos al csv no se notifique al usuario para evitar flood.
-
+----------
+IMPLEMENTACION DE IA
