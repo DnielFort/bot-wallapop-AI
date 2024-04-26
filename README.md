@@ -1,5 +1,5 @@
 # bot-wallapop-AI
-IMPLEMENTATION OF AI PART
+IMPLEMENTATION OF AI PART FOR VEHICLES 
 
 Machine Learning Approach Implementation for Selecting the Best Vehicle Deals
 
