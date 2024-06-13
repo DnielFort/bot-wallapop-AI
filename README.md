@@ -1,4 +1,35 @@
 # bot-wallapop-AI
+
+----------
+# Tasks: 
+API
+- [x] Given a new wallapop link, create a new csv file for each product, and if it exists, go to search the file
+- [x] Change params.txt .env
+- [x] Fix the bug that if there are no elements, it does not crash
+- [x] Insert ad limiter in the .env (not yet implemented in the code)
+- [x] Set in the .env the time it takes to search for the elements
+- [x] When there are no products with that name, send a message notifying the user and delete the previously created csv
+- [x] Optimize where to put the driver.quit()
+- [x] Optimize the sleeps of the animations in open_web
+----------
+PART IN CHARGE OF MANAGING THE BOT
+- [x] Create a new project independent from the API to control the behavior of the bot
+- [x] Create a folder for each new user, with their chatid as the title. Check new users
+- [x] Automatically create a links file in each user's folder so that each user can store their links
+- [x] Automate the csv file creation system for each user, the files will be stored in their respective folder
+- [x] Add a set of instructions
+- [x] Set a password for new users
+- [x] CURRENT Filter all folder names in users (chatid of each user) and save them as authorized users so they do not have to enter the password with each reset
+- [ ] Set up a trial
+- [ ] Be able to omit ads from certain users or certain titles
+----------
+API MODIFICATIONS TO WORK TOGETHER WITH THE BOT
+- [x] Modify the main loop to execute buscar_productos() from all the links of all users.
+- [x] Edit the csv generation system so that it creates the files in the folder of each user.
+- [x] Establish that the first time the products are added to the csv, the user is not notified to avoid flood.
+----------
+
+
 IMPLEMENTATION OF AI PART FOR VEHICLES 
 
 Machine Learning Approach Implementation for Selecting the Best Vehicle Deals
@@ -49,32 +80,3 @@ Other interesting aspects to determine:
 It is worth assessing the utility of using classic unsupervised clustering algorithms (to be determined between K-means or Hierarchical) or advanced clustering (Dbscan or Optics). The idea is to create groups with vehicle characteristics, possibly adding to the Wallapop link of the vehicle and its score from 1 to 10, the cluster it belongs to, adding to the text of the Telegram chat the profiling of the clusters (what characteristics define each group). This addition would provide more information to the user about the type of vehicle in question.
 
 
-
-----------
-# Tasks: 
-API
-- [x] Given a new wallapop link, create a new csv file for each product, and if it exists, go to search the file
-- [x] Change params.txt .env
-- [x] Fix the bug that if there are no elements, it does not crash
-- [x] Insert ad limiter in the .env (not yet implemented in the code)
-- [x] Set in the .env the time it takes to search for the elements
-- [x] When there are no products with that name, send a message notifying the user and delete the previously created csv
-- [x] Optimize where to put the driver.quit()
-- [x] Optimize the sleeps of the animations in open_web
-----------
-PART IN CHARGE OF MANAGING THE BOT
-- [x] Create a new project independent from the API to control the behavior of the bot
-- [x] Create a folder for each new user, with their chatid as the title. Check new users
-- [x] Automatically create a links file in each user's folder so that each user can store their links
-- [x] Automate the csv file creation system for each user, the files will be stored in their respective folder
-- [x] Add a set of instructions
-- [x] Set a password for new users
-- [x] CURRENT Filter all folder names in users (chatid of each user) and save them as authorized users so they do not have to enter the password with each reset
-- [ ] Set up a trial
-- [ ] Be able to omit ads from certain users or certain titles
-----------
-API MODIFICATIONS TO WORK TOGETHER WITH THE BOT
-- [x] Modify the main loop to execute buscar_productos() from all the links of all users.
-- [x] Edit the csv generation system so that it creates the files in the folder of each user.
-- [x] Establish that the first time the products are added to the csv, the user is not notified to avoid flood.
-----------
